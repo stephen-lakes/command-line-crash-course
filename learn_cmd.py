@@ -1,10 +1,9 @@
 import random
 
 print("=================================")
-print("COMMAND LINE CRASH COUSRSE")
+print("COMMAND LINE CRASH COURSE")
 print("=================================")
 
-game_commands = {'Q': 'quit', 'H': 'hint', 'M' : 'main menu' }
 
 PHARASES = {
     "mkdir %%%":
@@ -36,6 +35,13 @@ for word in WORDS_FILE:
     #WORDS.append(str(word.strip(), encoding="utf-8"))
     WORDS.append(word)
 
+
+
+def game_commands():
+    game_cmd = {'Q': 'quit', 'H': 'hint', 'M' : 'main menu' }
+    for cmd_key in game_cmd:
+            print(f" {cmd_key} for {game_cmd[cmd_key]} ")
+
 def convert(snippet, phrase):
 
     folder_names = [ w.capitalize() for w in random.sample(WORDS, snippet.count("%%%")) ]
@@ -57,31 +63,8 @@ def convert(snippet, phrase):
     
     return results
 
-
-condition = True
-
-while condition:
-
-    print("Type 'C' to view game commands")
-
-
-    command = input("> ")
-
-    if command.lower() == "c":
-
-        for command_key in game_commands:
-            print(f" {command_key} for {game_commands[command_key]} ")
-
-    elif command.lower() == 'm':
-
-        print("======== MAIN MENU ==============")
-        
-        print("Choose 1 for the basic, choose 2 for intermediat, choose 3 for advance")
-
-        level = input("> ")
-
-        if level == "1":
-            while True:
+def level_one():
+    while True:
 
                 snippets = list(PHARASES.keys())
                 random.shuffle(snippets)
@@ -95,16 +78,38 @@ while condition:
 
                     input("> ")
                     print(f"ANSWER: {answer}\n\n")
+    
+
+    
+
+condition = True
+
+while condition:
+
+    print("Type 'C' to view game commands")
 
 
+    command = input("> ")
 
-                
+    if command.lower() == "c":
+        game_commands()
 
 
+    elif command.lower() == 'm':
+
+        print("======== MAIN MENU ==============")
+        
+        print("Choose 1 for the basic, choose 2 for intermediate, choose 3 for advance")
+
+        chosen_level = input("> ")
+
+        if chosen_level == "1":
+            level_one()
+            
 
         
         else:
-            print("INVALID COMMAND")
+            print("INVALID LEVEL")
 
     elif command.lower() == "q":
 
