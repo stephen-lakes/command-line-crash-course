@@ -18,6 +18,10 @@ PHARASES = {
         "Remove the following files ***, *** from the current directory",
     "unlink ***":
         "Delete the *** file",
+    "touch ***.@@@":
+        "Create a ***.@@@ in the current folder",
+
+
     "clear":
         "Clear the terminal or command line",
     "ls":
@@ -28,19 +32,25 @@ PHARASES = {
     
 }
 
+#FILE_EXTENSIONS = open('file-extension.txt', 'r')
+
+
 WORDS_FILE = open('words.txt', 'r')
 WORDS = []
 
 for word in WORDS_FILE:
-    #WORDS.append(str(word.strip(), encoding="utf-8"))
-    WORDS.append(word)
+    
+    WORDS.append(word.strip())
 
+
+condition = True
 
 
 def game_commands():
     game_cmd = {'Q': 'quit', 'H': 'hint', 'M' : 'main menu' }
     for cmd_key in game_cmd:
             print(f" {cmd_key} for {game_cmd[cmd_key]} ")
+
 
 def convert(snippet, phrase):
 
@@ -63,8 +73,9 @@ def convert(snippet, phrase):
     
     return results
 
+
 def level_one():
-    while True:
+    while condition:
 
                 snippets = list(PHARASES.keys())
                 random.shuffle(snippets)
@@ -81,8 +92,6 @@ def level_one():
     
 
     
-
-condition = True
 
 while condition:
 
