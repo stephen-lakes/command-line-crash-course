@@ -1,0 +1,17 @@
+StoreFront
+Amazon
+Bolt
+CashApp
+FareMoney
+Hangman
+Tetris
+TicTacToe
+AmazingSpider
+Netflix
+Facebook
+VideoEidtor
+Patient
+Circuit
+PhotoMatch
+PasswordSaver
+BgRemover
