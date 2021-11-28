@@ -65,11 +65,11 @@ def convert(snippet, phrase):
     for sentence in snippet, phrase:
         result = sentence[:]
 
-        # fake folder names 
+        # folder names 
         for word in folder_names:
             result = result.replace("%%%", word, 1)
 
-        # fake file names
+        # file names
         for word in file_names:
             result = result.replace("***", word, 1)
 
@@ -93,7 +93,7 @@ def play_basics():
                     print(question)
 
                     input("> ")
-                    print(f"ANSWER: {answer}\n\n")
+                    print(f"\tANSWER: {answer}\n\n")
     
 
     
